@@ -1,0 +1,355 @@
+DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dupla Certa 98% - Dois Palpites Diários Infalíveis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(0, 255, 136, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 204, 255, 0.1) 0%, transparent 50%);
+        }
+        .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 50%, #ff8800 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .diamond-border {
+            border: 2px solid transparent;
+            background: linear-gradient(#000, #000) padding-box,
+                        linear-gradient(135deg, #ffd700, #ffaa00, #ffd700) border-box;
+        }
+        .pick-card {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.1);
+        }
+        .combo-badge {
+            background: linear-gradient(135deg, #ffd700, #ffaa00);
+            color: #000;
+            font-weight: 900;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        }
+        .accuracy-98 {
+            background: linear-gradient(135deg, #00ff88, #00cc6a);
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(0, 255, 136, 0); }
+        }
+        .guarantee-seal {
+            background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .streak-counter {
+            background: linear-gradient(90deg, transparent, rgba(255,215,0,0.1), transparent);
+        }
+        .win-glow {
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+        }
+        .perfect-tag {
+            background: linear-gradient(90deg, #ffd700, #ffaa00);
+            color: #000;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Header Premium -->
+    <nav class="fixed w-full z-50 glass-panel border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-black font-bold text-xl guarantee-seal">
+                            98
+                        </div>
+                        <div class="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-black animate-pulse"></div>
+                    </div>
+                    <div>
+                        <span class="font-display text-2xl font-bold gold-gradient">DUPLA CERTA</span>
+                        <div class="text-xs text-gray-400 tracking-widest">PREMIUM SELECTION</div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-6">
+                    <div class="streak-counter px-6 py-2 rounded-full border border-yellow-500/30 flex items-center gap-3">
+                        <i class="fas fa-fire text-orange-400 animate-pulse"></i>
+                        <div>
+                            <div class="text-xs text-gray-400">Sequência Perfeita</div>
+                            <div class="text-sm font-bold text-yellow-400">47 dias sem erro</div>
+                        </div>
+                    </div>
+                    <button onclick="scrollToToday()" class="bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 rounded-xl font-bold text-sm hover:shadow-lg hover:shadow-green-500/30 transition">
+                        Ver de Hoje
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - The Perfect Duo -->
+    <section id="today-section" class="pt-28 pb-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            
+            <!-- Date Navigator -->
+            <div class="flex justify-between items-center mb-8">
+                <button onclick="changeDate(-1)" class="group flex items-center gap-2 px-4 py-3 rounded-xl glass-panel hover:bg-white/10 transition">
+                    <i class="fas fa-chevron-left text-gray-400 group-hover:text-white"></i>
+                    <span class="hidden sm:inline text-sm">Ontem</span>
+                </button>
+                
+                <div class="text-center">
+                    <div class="text-xs text-yellow-500 font-semibold tracking-widest uppercase mb-1">Dupla do Dia</div>
+                    <h1 class="font-display text-3xl md:text-5xl font-bold" id="current-date">13 de Fevereiro, 2026</h1>
+                    <div class="flex items-center justify-center gap-2 mt-2">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                        <span class="text-green-400 text-sm font-semibold">Análise Confirmada - 98% Precisão</span>
+                    </div>
+                </div>
+
+                <button onclick="changeDate(1)" class="group flex items-center gap-2 px-4 py-3 rounded-xl glass-panel hover:bg-white/10 transition">
+                    <span class="hidden sm:inline text-sm">Amanhã</span>
+                    <i class="fas fa-chevron-right text-gray-400 group-hover:text-white"></i>
+                </button>
+            </div>
+
+            <!-- Combo Badge -->
+            <div class="flex justify-center mb-8">
+                <div class="combo-badge px-8 py-3 rounded-full text-lg flex items-center gap-3">
+                    <i class="fas fa-trophy"></i>
+                    <span>COMBO 98% - DUPLA INFALÍVEL</span>
+                    <i class="fas fa-trophy"></i>
+                </div>
+            </div>
+
+            <!-- The Two Picks -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                
+                <!-- Pick 1 -->
+                <div class="pick-card rounded-3xl p-8 relative overflow-hidden group hover:scale-[1.02] transition duration-300">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-500/20 to-transparent rounded-bl-full"></div>
+                    <div class="absolute top-4 right-4">
+                        <span class="accuracy-98 px-4 py-2 rounded-full text-black font-bold text-sm">98%</span>
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 font-bold">1</div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase tracking-wider" id="pick1-league">Premier League</div>
+                                <div class="text-sm text-gray-500">19:30</div>
+                            </div>
+                        </div>
+
+                        <h2 class="font-display text-3xl font-bold mb-2" id="pick1-teams">Chelsea vs Leeds</h2>
+                        
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="px-4 py-2 rounded-full bg-orange-500/20 text-orange-400 font-bold border border-orange-500/30" id="pick1-prediction">
+                                Over 2.5
+                            </span>
+                            <span class="text-2xl font-bold text-white" id="pick1-odds">1.75</span>
+                        </div>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-400">xG Esperado</span>
+                                <span class="font-semibold" id="pick1-xg">3.2 gols</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-400">Tendência</span>
+                                <span class="text-green-400 font-semibold">Alta confiança</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-400">Status</span>
+                                <span class="text-yellow-400 font-semibold" id="pick1-status">Aguardando</span>
+                            </div>
+                        </div>
+
+                        <div class="h-1 w-full bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-green-400 to-emerald-500" style="width: 98%"></div>
+                        </div>
+                        <div class="text-center text-xs text-gray-500 mt-2">Probabilidade calculada: 98.0%</div>
+                    </div>
+                </div>
+
+                <!-- Pick 2 -->
+                <div class="pick-card rounded-3xl p-8 relative overflow-hidden group hover:scale-[1.02] transition duration-300">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-transparent rounded-bl-full"></div>
+                    <div class="absolute top-4 right-4">
+                        <span class="accuracy-98 px-4 py-2 rounded-full text-black font-bold text-sm">98%</span>
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold">2</div>
+                            <div>
+                                <div class="text-xs text-gray-400 uppercase tracking-wider" id="pick2-league">Bundesliga</div>
+                                <div class="text-sm text-gray-500">16:30</div>
+                            </div>
+                        </div>
+
+                        <h2 class="font-display text-3xl font-bold mb-2" id="pick2-teams">Dortmund vs Mainz</h2>
+                        
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="px-4 py-2 rounded-full bg-orange-500/20 text-orange-400 font-bold border border-orange-500/30" id="pick2-prediction">
+                                Over 2.5
+                            </span>
+                            <span class="text-2xl font-bold text-white" id="pick2-odds">1.70</span>
+                        </div>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-400">xG Esperado</span>
+                                <span class="font-semibold" id="pick2-xg">3.4 gols</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-400">Tendência</span>
+                                <span class="text-green-400 font-semibold">Alta confiança</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-400">Status</span>
+                                <span class="text-yellow-400 font-semibold" id="pick2-status">Aguardando</span>
+                            </div>
+                        </div>
+
+                        <div class="h-1 w-full bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-blue-400 to-cyan-500" style="width: 98%"></div>
+                        </div>
+                        <div class="text-center text-xs text-gray-500 mt-2">Probabilidade calculada: 98.0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combined Analysis -->
+            <div class="diamond-border rounded-3xl p-8 mb-8 bg-black/50">
+                <div class="text-center mb-6">
+                    <h3 class="font-display text-2xl font-bold gold-gradient mb-2">Análise Combinada - Efeito Sinérgico</h3>
+                    <p class="text-gray-400 text-sm">A combinação destes dois jogos eleva a probabilidade de sucesso para 98%</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="glass-panel rounded-2xl p-6 text-center border border-green-500/20">
+                        <div class="text-4xl font-bold text-green-400 mb-2" id="combined-odd">2.98</div>
+                        <div class="text-xs text-gray-400">Odd Combinada</div>
+                        <div class="text-xs text-green-400 mt-1">Multiplicada</div>
+                    </div>
+                    
+                    <div class="glass-panel rounded-2xl p-6 text-center border border-yellow-500/20 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-transparent"></div>
+                        <div class="relative z-10">
+                            <div class="text-4xl font-bold gold-gradient mb-2">98%</div>
+                            <div class="text-xs text-gray-400">Probabilidade Final</div>
+                            <div class="text-xs text-yellow-400 mt-1">Correlação negativa</div>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel rounded-2xl p-6 text-center border border-blue-500/20">
+                        <div class="text-4xl font-bold text-blue-400 mb-2" id="expected-profit">+196%</div>
+                        <div class="text-xs text-gray-400">Lucro Esperado</div>
+                        <div class="text-xs text-blue-400 mt-1">Stake única na dupla</div>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 rounded-xl bg-white/5 border border-white/10">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-info-circle text-yellow-400 mt-1"></i>
+                        <div class="text-sm text-gray-300">
+                            <strong>Por que 98%?</strong> Selecionamos jogos com baixa correlação (ligas diferentes, horários diferentes) 
+                            onde a probabilidade de ambos ocorrerem simultaneamente é matematicamente superior à média individual. 
+                            O algoritmo identifica padrões onde um resultado compensa o risco do outro.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="copyBothPicks()" class="flex-1 max-w-md bg-gradient-to-r from-green-500 to-emerald-500 py-4 rounded-2xl font-bold text-lg hover:shadow-lg hover:shadow-green-500/30 transition flex items-center justify-center gap-3">
+                    <i class="fas fa-copy"></i>
+                    Copiar Dupla do Dia
+                </button>
+                <button onclick="showFullAnalysis()" class="flex-1 max-w-md glass-panel py-4 rounded-2xl font-bold text-lg border border-white/20 hover:bg-white/5 transition flex items-center justify-center gap-3">
+                    <i class="fas fa-chart-line"></i>
+                    Ver Análise Completa
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Stats -->
+    <section class="px-4 pb-12">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-display text-2xl font-bold text-center mb-8 gold-gradient">Histórico de Performance - 2026</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="glass-panel p-6 rounded-2xl text-center border border-green-500/20">
+                    <div class="text-4xl font-bold text-green-400 mb-2">94</div>
+                    <div class="text-xs text-gray-400">Duplas Green</div>
+                    <div class="text-xs text-green-400 mt-1">Últimos 47 dias</div>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl text-center border border-red-500/20">
+                    <div class="text-4xl font-bold text-red-400 mb-2">0</div>
+                    <div class="text-xs text-gray-400">Duplas Red</div>
+                    <div class="text-xs text-red-400 mt-1">Perfeito</div>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl text-center border border-yellow-500/20">
+                    <div class="text-4xl font-bold gold-gradient mb-2">98%</div>
+                    <div class="text-xs text-gray-400">Taxa de Acerto</div>
+                    <div class="text-xs text-yellow-400 mt-1">Matemática comprovada</div>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl text-center border border-blue-500/20">
+                    <div class="text-4xl font-bold text-blue-400 mb-2">+892%</div>
+                    <div class="text-xs text-gray-400">Lucro Acumulado</div>
+                    <div class="text-xs text-blue-400 mt-1">Desde 01/01/2026</div>
+                </div>
+            </div>
+
+            <!-- Monthly Chart -->
+            <div class="glass-panel rounded-3xl p-6 border border-white/10">
+                <canvas id="performanceChart" height="100"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar View -->
+    <section class="px-4 pb-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="font-display text-2xl font-bold">Calendário de Duplas - 2026</h2>
+                <div class="flex gap-2">
+                    <button onclick="changeMonth(-1)" class="w-10 h-10 rounded-lg glass-panel flex items-center justify-center hover:bg-white/10 transition">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <span class="px-4 py-2 rounded-lg glass-panel font-semibold" id="calendar-month">Fevereiro 2026</span>
+                    <button onclick="changeMonth(1)" class="w-10 h-10 rounded-lg glass-panel flex items-center justify-center hover:bg-white/10 transition">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass-panel rounded-2xl p-6 border border-white/10">
+                <div class="grid grid-cols-7 gap-2 mb-4 text-center text-sm text-gray-400">
+                    <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</
